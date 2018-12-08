@@ -9,6 +9,7 @@ import scrapy
 
 class QuotesSpider(scrapy.Spider):
     name = "catchImg"
+<<<<<<< HEAD
 
     allowed_domains = ['quantuwang.com']
 
@@ -35,3 +36,18 @@ class QuotesSpider(scrapy.Spider):
         print sub_page
         if sub_page is not None:
             yield response.follow(sub_page, self.parse)
+=======
+    start_urls = [
+        'https://mp.weixin.qq.com/s/Gw5g1RXoUvjVU7aSeLsNsQ',
+    ]
+
+    def parse(self, response):
+        for img in response.css('img'):
+            yield {
+                'src': img.css('img::attr(src)').extract_first(),
+            }
+
+        # next_page = response.css('li.next a::attr("href")').extract_first()
+        # if next_page is not None:
+        #     yield response.follow(next_page, self.parse)
+>>>>>>> bd686529204361622897c9003e5d0aeef4d5bac9
