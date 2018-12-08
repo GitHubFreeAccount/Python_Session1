@@ -56,3 +56,6 @@ if __name__ == '__main__':
     print isgeneratorfunction(fabyield)
     # 分割字符串为字符串数组
     print "i love you".split()
+
+    urls = 'http://ww3.sinaimg.cn/mw600/0073tLPGgy1fxidfpbgkmj30oo0zkdnn.jpg'
+    print urls.rsplit('/')[-1]
